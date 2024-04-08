@@ -6,7 +6,6 @@ from keras.models import load_model
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow
-from tensorflow import keras
 
 start = '2010-01-01'
 end = '2019-12-31'
