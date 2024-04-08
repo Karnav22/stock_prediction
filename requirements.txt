@@ -3,6 +3,6 @@ numpy
 pandas
 streamlit
 matplotlib
-sklearn
+scikit-learn
 keras
 pandas_datareader
