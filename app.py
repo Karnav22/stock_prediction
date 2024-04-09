@@ -9,10 +9,10 @@ from sklearn.preprocessing import MinMaxScaler
 st.title('Stock Trend Prediction')
 user_input = st.text_input('Enter Stock Ticker', 'AAPL')
 
-start ='2010-01-01'
-end ='2019-12-31'
+start='2010-01-01'
+end='2019-12-31'
 
-df = data.DataReader(user_input, data_source='yahoo', start=start, end=end)
+df = data.DataReader(user_input, data_source='stooq', start=start, end=end)
 
 # Describing data
 st.subheader('Data From 2010-2019')
@@ -62,7 +62,7 @@ model = load_model('keras_model.h5')
 
 # Testing Part
 past_100_days = data_training.tail(100)
-final_df = past_100_days.append(data_testing, ignore_index=True)
+final_df = past_100_days._append(data_testing, ignore_index=True)
 input_data = scaler.transform(np.array(final_df).reshape(-1, 1))
 
 x_test = []
