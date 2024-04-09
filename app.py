@@ -5,17 +5,20 @@ import pandas_datareader as data
 from keras.models import load_model
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
+import datetime
 
 st.title('Stock Trend Prediction')
 user_input = st.text_input('Enter Stock Ticker', 'AAPL')
 
-start='2010-01-01'
-end='2019-12-31'
+start='2010-01-01'#st.date_input(label='Start', value=None, min_value=None, max_value=None, key=None, help=None, on_change=None, args=None, kwargs=None, format="YYYY/MM/DD", disabled=False, label_visibility="visible")
+#'2010-01-01'
+end='2019-12-31'#st.date_input(label='End', value=None, min_value=None, max_value=None, key=None, help=None, on_change=None, args=None, kwargs=None, format="YYYY/MM/DD", disabled=False, label_visibility="visible")
+#'2019-12-31'
 
 df = data.DataReader(user_input, data_source='stooq', start=start, end=end)
 
 # Describing data
-st.subheader('Data From 2010-2019')
+st.subheader('Data From 2010 to 2019')
 st.write(df.describe())
 
 # Visualizations
